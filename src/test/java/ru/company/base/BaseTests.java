@@ -1,6 +1,7 @@
 package ru.company.base;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import ru.company.framework.managers.InitManager;
@@ -21,8 +22,8 @@ public class BaseTests {
         InitManager.initFramework();
     }
 
-    @AfterAll
-    static void after() {
+    @AfterEach
+    void after() {
         InitManager.quitFramework();
     }
 

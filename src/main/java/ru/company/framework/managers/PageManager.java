@@ -12,12 +12,12 @@ public class PageManager {
     /**
      * Стартовая страничка
      */
-    StartPage startPage;
+    private static StartPage startPage;
 
     /**
      * Стартовая страничка вклада
      */
-    DepositPage depositPage;
+    private static DepositPage depositPage;
 
     /**
      * Конструктор специально запривейтили (синглтон)
@@ -59,5 +59,14 @@ public class PageManager {
             depositPage = new DepositPage();
         }
         return depositPage;
+    }
+
+    public static void quitPages() {
+        if (startPage != null) {
+            startPage = null;
+        }
+        if (depositPage != null) {
+            depositPage = null;
+        }
     }
 }

@@ -9,10 +9,10 @@ public class DriverManager {
 
 
     /**
-     * Переменна для хранения объекта веб дравера
+     * Переменная для хранения объекта веб дравера
      * @see WebDriver
      */
-    private static WebDriver driver;
+    private static WebDriver driver = null;
 
     /**
      * Менеджер пропертей
@@ -56,5 +56,6 @@ public class DriverManager {
     public static void quitDriver() {
         driver.quit();
         driver = null;
+        PageManager.quitPages();
     }
 }
